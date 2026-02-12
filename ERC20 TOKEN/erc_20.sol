@@ -72,7 +72,7 @@ contract ERC20 {
     }
 
     // Checks how many tokens an owner has allowed a spender to use
-    function allowance(address _spender, address _owner) public view returns(uint){
+    function allowance(address _owner, address _spender) public view returns(uint){
         return allowed[_owner][_spender];
     }
 
@@ -96,4 +96,5 @@ contract ERC20 {
         totalToken -= _amount;                                          // Reduce total supply
         emit Transfer(msg.sender, address(0), _amount);                 // Log burn as move to zero address
     }
+
 }
